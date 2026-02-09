@@ -1,3 +1,5 @@
+// _app.js
+
 import GlobalStyle from "../styles";
 
 export default function App({ Component, pageProps }) {
