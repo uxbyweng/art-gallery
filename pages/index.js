@@ -1,10 +1,12 @@
-import ListOfArtPieces from "@/components/ListOfArtPieces";
+// pages/index.js
+
+import Link from "next/link";
 
 export default function HomePage() {
   return (
     <div>
-      <h1>Hello from Next.js</h1>
-      <ListOfArtPieces />
+      <h1>Gallery App (web-recap-project-5)</h1>
+      <Link href={`/gallery/`}>Zur Gallery Page</Link>
     </div>
   );
 }

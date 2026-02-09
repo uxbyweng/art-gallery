@@ -1,8 +1,19 @@
 // components/ListOfArtPieces/ListOfArtPieces.js
-// import { useState } from "react";
+
 import useSWR from "swr";
 import Link from "next/link";
 import Image from "next/image";
+import styled from "styled-components";
+
+const ListItem = styled.li`
+  list-style: none;
+  border-bottom: 1px solid #ccc;
+`;
+
+const List = styled.ul`
+  padding: 0;
+  margin: 0;
+`;
 
 async function fetcher(url) {
   const response = await fetch(url);
@@ -24,17 +35,11 @@ export default function ListOfArtPieces() {
 
   return (
     <>
-      <p>ListOfArtPieces</p>
-      <ul>
+      <List>
         {artPieces.map((artPiece) => (
-          <li key={artPiece.slug}>
+          <ListItem key={artPiece.slug} className="listItem">
             <p>Artist: {artPiece.artist}</p>
             <p>Name: {artPiece.name}</p>
-            <p>Year: {artPiece.year}</p>
-            <p>Genre: {artPiece.genre}</p>
-
-            <p>Colors: {artPiece.colors.join(", ")}</p>
-
             <Link href={`/gallery/${artPiece.slug}`}>
               <Image
                 src={artPiece.imageSource}
@@ -47,9 +52,12 @@ export default function ListOfArtPieces() {
                 }}
               />
             </Link>
-          </li>
+            <p>Year: {artPiece.year}</p>
+            <p>Genre: {artPiece.genre}</p>
+            <p>Colors: {artPiece.colors.join(", ")}</p>
+          </ListItem>
         ))}
-      </ul>
+      </List>
     </>
   );
 }
