@@ -6,7 +6,11 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} />
+      <Component
+        pieces={
+          pageProps
+        } /*hier müssen die Daten aus dem Fetch übergeben werden*/
+      />
     </>
   );
 }
