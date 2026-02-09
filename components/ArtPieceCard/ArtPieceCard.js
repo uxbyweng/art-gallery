@@ -62,7 +62,6 @@ export default function ArtPieceCard({
     <Card>
       <Title>{artPiece.name}</Title>
 
-      {/* Bild nur verlinken, wenn href gesetzt wird */}
       <Media>{href ? <LinkWrap href={href}>{img}</LinkWrap> : img}</Media>
 
       <Details>
