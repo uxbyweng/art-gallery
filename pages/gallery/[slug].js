@@ -6,6 +6,7 @@ import Head from "next/head";
 import Link from "next/link";
 import ArtPieceCard from "@/components/ArtPieceCard/ArtPieceCard";
 import CommentForm from "@/components/CommentForm/CommentForm";
+import ListOfComments from "@/components/ListOfComments/ListOfComments";
 
 /* Bilddaten aus der API fetchen */
 async function fetcher(url) {
@@ -58,6 +59,7 @@ export default function ArtPieceDetailPage({ handleAddComment }) {
         imageHeight={imageHeight}
       />
       <CommentForm onAddComment={handleAddComment} slug={slug} />
+      <ListOfComments slug={slug} />
     </main>
   );
 }
