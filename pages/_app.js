@@ -5,7 +5,7 @@ import GlobalStyle from "../styles";
 import Navigation from "../components/Navigation";
 
 export default function App({ Component, pageProps }) {
-  const initialComments = ["Comment 1", "Comment 2", "Comment 3"];
+  const initialComments = [];
 
   // STATE (FÜR COMMENTS) MIT LOCAL STORAGE (key = comments, opions = defaultValue)
   const [comments, setComments] = useLocalStorageState("comments", {

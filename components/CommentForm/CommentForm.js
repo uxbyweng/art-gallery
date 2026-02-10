@@ -1,7 +1,5 @@
 // components/CommentForm/CommentForm.js
 
-import { uid } from "uid";
-
 export default function CommentForm({ onAddComment, slug }) {
   console.log("slug: ", slug);
   function handleSubmit(event) {
@@ -11,7 +9,7 @@ export default function CommentForm({ onAddComment, slug }) {
     const data = Object.fromEntries(formData);
 
     const newCommentObject = {
-      id: uid(16),
+      slug: slug,
       comment: data.comment,
     };
 
@@ -24,7 +22,6 @@ export default function CommentForm({ onAddComment, slug }) {
 
   return (
     <form data-js="commentForm" onSubmit={handleSubmit}>
-      {/* <form data-js={formId} onSubmit={handleSubmit}> */}
       <label htmlFor="comment">Add a comment</label>
       <input
         name="comment"
@@ -34,6 +31,7 @@ export default function CommentForm({ onAddComment, slug }) {
         maxLength="25"
         required
       />
+      <input name="slug" id="slug" type="hidden" defaultValue={slug} />
 
       <button type="submit">Send</button>
     </form>
