@@ -1,8 +1,21 @@
 // components/CommentForm/CommentForm.js
 
 export default function CommentForm() {
+  // export default function CommentForm({ onAddComment }) {
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+
+    console.log(data.comment);
+
+    event.target.reset(); // formular wieder in den Ausgangszustand zurück setzen
+  }
+
   return (
-    <form data-js="commentForm">
+    <form data-js="commentForm" onSubmit={handleSubmit}>
       {/* <form data-js={formId} onSubmit={handleSubmit}> */}
       <label htmlFor="comment">Add a comment</label>
       <input
