@@ -25,7 +25,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} handleAddComment={handleAddComment} />
+      <Component {...pageProps} handleAddComment={handleAddComment} comments />
       <Navigation />
     </>
   );

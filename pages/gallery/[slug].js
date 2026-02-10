@@ -57,7 +57,7 @@ export default function ArtPieceDetailPage({ handleAddComment }) {
         imageWidth={imageWidth}
         imageHeight={imageHeight}
       />
-      <CommentForm onAddComment={handleAddComment} />
+      <CommentForm onAddComment={handleAddComment} slug={slug} />
     </main>
   );
 }

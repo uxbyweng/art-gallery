@@ -2,7 +2,8 @@
 
 import { uid } from "uid";
 
-export default function CommentForm({ onAddComment }) {
+export default function CommentForm({ onAddComment, slug }) {
+  console.log("slug: ", slug);
   function handleSubmit(event) {
     event.preventDefault();
 
