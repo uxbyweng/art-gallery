@@ -1,16 +1,15 @@
 // _app.js
 
+import "../assets/css/main.css";
 import GlobalStyle from "../styles";
+import Navigation from "../components/Navigation";
 
 export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
-      <Component
-        pieces={
-          pageProps
-        } /*hier müssen die Daten aus dem Fetch übergeben werden*/
-      />
+      <Component {...pageProps} />
+      <Navigation />
     </>
   );
 }
