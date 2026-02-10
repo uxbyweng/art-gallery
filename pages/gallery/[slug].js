@@ -5,6 +5,7 @@ import useSWR from "swr";
 import Head from "next/head";
 import Link from "next/link";
 import ArtPieceCard from "@/components/ArtPieceCard/ArtPieceCard";
+import CommentForm from "@/components/CommentForm/CommentForm";
 
 /* Bilddaten aus der API fetchen */
 async function fetcher(url) {
@@ -56,6 +57,7 @@ export default function ArtPieceDetailPage() {
         imageWidth={imageWidth}
         imageHeight={imageHeight}
       />
+      <CommentForm />
     </main>
   );
 }
