@@ -3,14 +3,14 @@
 import ListOfArtPieces from "@/components/ListOfArtPieces/ListOfArtPieces.js";
 import Head from "next/head";
 
-export default function Movies() {
+export default function ArtGallery({ comments }) {
   return (
     <main>
       <Head>
         <title>Art Gallery</title>
       </Head>
       <h1>Art Gallery</h1>
-      <ListOfArtPieces />
+      <ListOfArtPieces comments={comments} />
     </main>
   );
 }

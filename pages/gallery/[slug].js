@@ -17,7 +17,7 @@ async function fetcher(url) {
   return response.json();
 }
 
-export default function ArtPieceDetailPage({ handleAddComment }) {
+export default function ArtPieceDetailPage({ handleAddComment, comments }) {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -59,7 +59,7 @@ export default function ArtPieceDetailPage({ handleAddComment }) {
         imageHeight={imageHeight}
       />
       <CommentForm onAddComment={handleAddComment} slug={slug} />
-      <ListOfComments slug={slug} />
+      <ListOfComments slug={slug} comments={comments} />
     </main>
   );
 }

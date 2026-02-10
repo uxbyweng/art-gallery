@@ -20,12 +20,14 @@ export default function App({ Component, pageProps }) {
     console.log(updatedComments); // Aktuellen State in der Conole ausgeben
   };
 
-  console.log(comments);
-
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} handleAddComment={handleAddComment} comments />
+      <Component
+        {...pageProps}
+        handleAddComment={handleAddComment}
+        comments={comments}
+      />
       <Navigation />
     </>
   );
