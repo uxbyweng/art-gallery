@@ -2,7 +2,6 @@
 import Spotlight from "@/components/Spotlight";
 import getRandomElement from "@/utils/getRandomElement";
 
-<<<<<<< HEAD
 import Link from "next/link";
 
 export default function HomePage({ pieces }) {
@@ -19,12 +18,6 @@ export default function HomePage({ pieces }) {
         artist={spotlightPiece.artist}
         imageSource={spotlightPiece.imageSource}
       />
-=======
-export default function HomePage() {
-  return (
-    <div>
-      <h1>Gallery App (web-recap-project-5)</h1>
->>>>>>> main
     </div>
   );
 }
