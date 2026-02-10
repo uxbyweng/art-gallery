@@ -10,7 +10,7 @@ export default function HomePage() {
   const {
     data: artPieces = [],
     error,
-    isloading,
+    isLoading,
   } = useSWR("https://example-apis.vercel.app/api/art", fetcher);
   if (error) return <p>Error loading artworks</p>;
   if (isloading || artPieces.length === 0)
