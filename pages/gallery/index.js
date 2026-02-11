@@ -2,9 +2,9 @@
 
 import ListOfArtPieces from "@/components/ListOfArtPieces/ListOfArtPieces.js";
 import Head from "next/head";
-import FavoriteButton from "@/components/FavoriteButton";
 
 export default function ArtGallery({
+  comments,
   artPieces,
   artPiecesInfo,
   onToggleFavorite,
@@ -17,6 +17,7 @@ export default function ArtGallery({
       <h1>Art Gallery</h1>
       <ListOfArtPieces
         pieces={artPieces}
+        comments={comments}
         artPiecesInfo={artPiecesInfo}
         onToggleFavorite={onToggleFavorite}
       />
