@@ -30,6 +30,7 @@ const Details = styled.ul`
   display: grid;
   gap: 4px;
   font-size: 0.9rem;
+  position: relative;
 `;
 const StyledImage = styled(Image)`
   object-fit: cover;

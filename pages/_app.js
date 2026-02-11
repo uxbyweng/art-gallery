@@ -5,7 +5,7 @@ import useLocalStorageState from "use-local-storage-state";
 import MetaHead from "@/components/MetaHead/MetaHead";
 import Header from "../components/Header/Header";
 import GlobalStyle from "../styles";
-import Navigation from "../components/Navigation";
+import Navigation from "./navigation";
 
 /* API Fetch Funktion */
 async function fetcher(url) {
