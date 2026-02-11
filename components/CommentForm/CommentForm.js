@@ -14,10 +14,19 @@ const Label = styled.label`
   line-height: 1.2;
   padding: 5px;
 `;
-const Input = styled.input`
-  padding: 5px;
+const Hint = styled.p`
+  font-size: 0.7rem;
+  line-height: 1;
+  padding: 0 5px;
   margin-bottom: 10px;
+`;
+const Input = styled.input`
+  padding: 05px;
   width: 100%;
+`;
+const Button = styled.button`
+  min-width: 40px;
+  min-height: 40px;
 `;
 
 export default function CommentForm({ onAddComment, slug }) {
@@ -70,8 +79,12 @@ export default function CommentForm({ onAddComment, slug }) {
         minLength="3"
         maxLength="45"
         required
+        aria-describedby="comment-hint"
       />
-      <button type="submit">Send</button>
+      <Hint id="comment-hint">3–45 characters.</Hint>
+      <Button type="submit" aria-label="Submit comment">
+        Post comment
+      </Button>
     </Form>
   );
 }
