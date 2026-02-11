@@ -52,6 +52,7 @@ export default function ArtPieceCard({
             width={imageWidth}
             height={imageHeight}
             alt={`${artPiece.name} by ${artPiece.artist}`}
+            loading="lazy"
           />
         </Link>
       ) : (
@@ -60,6 +61,7 @@ export default function ArtPieceCard({
           width={imageWidth}
           height={imageHeight}
           alt={`${artPiece.name} by ${artPiece.artist}`}
+          loading="lazy"
         />
       )}
       {showDetails && (
