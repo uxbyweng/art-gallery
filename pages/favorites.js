@@ -12,15 +12,11 @@ async function fetcher(url) {
   return response.json();
 }
 
-export default function FavoritesPage({ artPiecesInfo, onToggleFavorite }) {
-  const {
-    data: artPieces = [],
-    isLoading,
-    error,
-  } = useSWR("https://example-apis.vercel.app/api/art", fetcher);
-  if (isLoading) return <h1>Loading...</h1>;
-  if (error) return <h1>{error.message}</h1>;
-
+export default function FavoritesPage({
+  artPieces,
+  artPiecesInfo,
+  onToggleFavorite,
+}) {
   const favoritedPieces = artPieces.filter((artPiece) => {
     const info = artPiecesInfo.find((info) => info.slug === artPiece.slug);
     if (info && info.isFavorite) {

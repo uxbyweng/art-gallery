@@ -21,8 +21,11 @@ export default function App({ Component, pageProps }) {
       <GlobalStyle />
       <Component
         {...pageProps}
+        artPieces={artPieces}
         artPiecesInfo={artPiecesInfo}
         onToggleFavorite={handleToggleFavorite}
+        isLoading={isLoading}
+        error={error}
       />
       <Navigation />
     </>
