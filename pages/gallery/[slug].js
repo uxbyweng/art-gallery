@@ -5,6 +5,24 @@ import useSWR from "swr";
 import Head from "next/head";
 import Link from "next/link";
 import ArtPieceCard from "@/components/ArtPieceCard/ArtPieceCard";
+import CommentForm from "@/components/CommentForm/CommentForm";
+import ListOfComments from "@/components/ListOfComments/ListOfComments";
+import styled from "styled-components";
+
+/* Styling */
+const Card = styled.article`
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  margin-top: 10px;
+  padding: 12px;
+`;
+
+const Title = styled.h2`
+  font-size: 1rem;
+  line-height: 1.2;
+`;
 
 /* Bilddaten aus der API fetchen */
 async function fetcher(url) {
@@ -15,7 +33,7 @@ async function fetcher(url) {
   return response.json();
 }
 
-export default function ArtPieceDetailPage() {
+export default function ArtPieceDetailPage({ handleAddComment, comments }) {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -56,6 +74,13 @@ export default function ArtPieceDetailPage() {
         imageWidth={imageWidth}
         imageHeight={imageHeight}
       />
+      <Card>
+        <Title>Comments:</Title>
+        <ListOfComments slug={slug} comments={comments} />
+      </Card>
+      <Card>
+        <CommentForm onAddComment={handleAddComment} slug={slug} />
+      </Card>
     </main>
   );
 }
