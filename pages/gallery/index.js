@@ -4,7 +4,7 @@ import ListOfArtPieces from "@/components/ListOfArtPieces/ListOfArtPieces.js";
 import Head from "next/head";
 import FavoriteButton from "@/components/FavoriteButton";
 
-export default function Movies({ artPiecesInfo, onToggleFavorite }) {
+export default function ArtGallery({ artPiecesInfo, onToggleFavorite }) {
   return (
     <main>
       <Head>
