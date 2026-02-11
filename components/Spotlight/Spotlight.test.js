@@ -6,6 +6,11 @@ test("renders the artist name of the spotlight piece", () => {
     <Spotlight
       imageSource="https://example-apis.vercel.app/assets/art/orange-red-and-green.jpg"
       artist="Steve Johnson"
+      slug="orange-red-and-green"
+      artPiecesInfo={[]}
+      onToggleFavorite={() => {}}
+      width="150"
+      height="200"
     />
   );
   const artistELement = screen.getByRole("heading", { name: /steve johnson/i });
@@ -18,6 +23,11 @@ test("render the spotlight image", () => {
     <Spotlight
       imageSource="https://example-apis.vercel.app/assets/art/orange-red-and-green.jpg"
       artist="Steve Johnson"
+      slug="orange-red-and-green"
+      artPiecesInfo={[]}
+      onToggleFavorite={() => {}}
+      width="150"
+      height="200"
     />
   );
   const imageElement = screen.getByRole("img", {
