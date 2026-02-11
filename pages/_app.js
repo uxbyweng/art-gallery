@@ -2,7 +2,8 @@
 
 import useSWR from "swr";
 import useLocalStorageState from "use-local-storage-state";
-import { useState } from "react";
+import MetaHead from "@/components/MetaHead/MetaHead";
+import Header from "../components/Header/Header";
 import GlobalStyle from "../styles";
 import Navigation from "../components/Navigation";
 
@@ -56,6 +57,8 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
+      <MetaHead />
+      <Header />
       <Component
         {...pageProps}
         artPieces={artPieces}

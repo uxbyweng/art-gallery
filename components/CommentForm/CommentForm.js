@@ -63,8 +63,6 @@ export default function CommentForm({ onAddComment, slug }) {
     // und an die Funktion 'onAddComment" übergeben
     onAddComment(newCommentObject);
 
-    // console.log(data.comment);
-
     event.target.reset(); // formular wieder in den Ausgangszustand zurück setzen
   }
 

@@ -4,45 +4,58 @@ import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
 
-  *,
-  *::before,
-  *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
-  }
-
-  body {
-  margin: 0;
-  font-family: system-ui;
-  background: #fafafa;
-  color: #111;
 }
 
-/* Media defaults */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #222222;
+    color: #ccc;
+}
+
 img,
 picture,
 video,
 canvas,
 svg {
-  display: block;
-  max-width: 100%;
+    display: block;
+    max-width: 100%;
 }
 
-/* Form defaults */
 input,
 button,
 textarea,
 select {
-  font: inherit;
+    font: inherit;
+}
+
+#__next {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 24px;
+    flex: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px;
 }
 
 h1, h2 {
     margin-bottom: 20px;
+}
+h1 {
+    font-family: Lucida, sans-serif;
+    font-weight: 300;
+    color: #ff0000;
 }
 
 /* muss noch entfernt/in die Card Componente ausgelagert werden */

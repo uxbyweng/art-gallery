@@ -15,11 +15,12 @@ const Card = styled.article`
   }
 `;
 const Title = styled.h2`
+  color: #222;
   font-size: 1rem;
   line-height: 1.2;
 `;
 const SubTitle = styled.span`
-  color: #828282;
+  color: #a5a5a5;
 `;
 const Details = styled.ul`
   list-style: none;

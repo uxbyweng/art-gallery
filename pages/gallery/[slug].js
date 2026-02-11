@@ -1,8 +1,7 @@
 // pages/gallery/[slug].js
 
 import { useRouter } from "next/router";
-import Head from "next/head";
-import Link from "next/link";
+import MetaHead from "@/components/MetaHead/MetaHead";
 import ArtPieceCard from "@/components/ArtPieceCard/ArtPieceCard";
 import CommentForm from "@/components/CommentForm/CommentForm";
 import ListOfComments from "@/components/ListOfComments/ListOfComments";
@@ -43,27 +42,25 @@ export default function ArtPieceDetailPage({
   const imageHeight = 400;
 
   return (
-    <main>
-      <Head>
-        <title>
-          {artPiece.artist} - {artPiece.name}
-        </title>
-      </Head>
-      <Link className="back-link" href="/gallery/">
-        Back to Gallery
-      </Link>
-      <ArtPieceCard
-        artPiece={artPiece}
-        imageWidth={imageWidth}
-        imageHeight={imageHeight}
+    <>
+      <MetaHead
+        title="ArtPiece Title | Art Gallery"
+        description="ArtPiece Title from Artist"
       />
-      <Card>
-        <Title>Comments:</Title>
-        <ListOfComments slug={slug} comments={comments} />
-      </Card>
-      <Card>
-        <CommentForm onAddComment={handleAddComment} slug={slug} />
-      </Card>
-    </main>
+      <main>
+        <ArtPieceCard
+          artPiece={artPiece}
+          imageWidth={imageWidth}
+          imageHeight={imageHeight}
+        />
+        <Card>
+          <Title>Comments:</Title>
+          <ListOfComments slug={slug} comments={comments} />
+        </Card>
+        <Card>
+          <CommentForm onAddComment={handleAddComment} slug={slug} />
+        </Card>
+      </main>
+    </>
   );
 }

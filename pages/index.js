@@ -2,7 +2,6 @@
 import Spotlight from "@/components/Spotlight";
 import getRandomElement from "@/utils/getRandomElement";
 import useSWR from "swr";
-import Link from "next/link";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -20,9 +19,8 @@ export default function HomePage({ artPiecesInfo, onToggleFavorite }) {
     return <p>Loading Spotlight... Please Wait...</p>;
   }
   return (
-    <div>
-      <h1>Gallery App</h1>
-      <Link href={`/gallery/`}>Zur Gallery Page</Link>
+    <main>
+      <h1>Spotlight</h1>
       <Spotlight
         artist={spotlightPiece.artist}
         imageSource={spotlightPiece.imageSource}
@@ -32,6 +30,6 @@ export default function HomePage({ artPiecesInfo, onToggleFavorite }) {
         artPiecesInfo={artPiecesInfo}
         onToggleFavorite={onToggleFavorite}
       />
-    </div>
+    </main>
   );
 }

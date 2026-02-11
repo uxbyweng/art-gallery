@@ -31,13 +31,7 @@ const ListItem = styled.li`
   }
 `;
 
-export default function ListOfComments({
-  artPiece,
-  isFavorite,
-  slug,
-  comments,
-  onToggleFavorite,
-}) {
+export default function ListOfComments({ slug, comments }) {
   // neues Array 'matchingComments' anlegen
   // Mit 'filter' durch alle Kommentare gehen und wenn der 'slug' übereinstimmt ins Array reinpushen
   const matchingComments = comments.filter((comment) => comment.slug === slug);
