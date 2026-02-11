@@ -1,5 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBolt, faImages, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 const Nav = styled.nav`
   background-color: rgb(50, 50, 50);
@@ -21,11 +23,17 @@ const ListItem = styled.li`
 `;
 
 const StyledLink = styled(Link)`
-  display: block;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   width: 100%;
+  padding: 10px 0;
   text-align: center;
-  padding: 15px 0;
   color: #fff;
+  min-height: 44px;
 `;
 
 export default function Navigation() {
@@ -34,17 +42,20 @@ export default function Navigation() {
       <List>
         <ListItem>
           <StyledLink href="/" aria-label="Go to Spotlight page">
-            Spotlight
+            <FontAwesomeIcon icon={faBolt} aria-hidden="true" />
+            <span>Spotlight</span>
           </StyledLink>
         </ListItem>
         <ListItem>
           <StyledLink href="/gallery/" aria-label="Go to Art Pieces gallery">
-            Art Pieces
+            <FontAwesomeIcon icon={faImages} aria-hidden="true" />
+            <span>Art Pieces</span>
           </StyledLink>
         </ListItem>
         <ListItem>
           <StyledLink href="/favorites/" aria-label="Go to Favorites page">
-            Favorites
+            <FontAwesomeIcon icon={faHeart} aria-hidden="true" />
+            <span>Favorites</span>
           </StyledLink>
         </ListItem>
       </List>
