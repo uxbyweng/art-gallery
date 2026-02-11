@@ -37,13 +37,6 @@ export default function ListOfComments({ slug, comments }) {
   // Mit 'filter' durch alle Kommentare gehen und wenn der 'slug' übereinstimmt ins Array reinpushen
   const matchingComments = comments.filter((comment) => comment.slug === slug);
 
-  // zum Bild gehörende Kommentare im object 'comments' anhand von 'slug' ins array 'matchingComments' speichern.
-  for (const comment of comments) {
-    if (comment.slug === slug) {
-      matchingComments.push(comment);
-    }
-  }
-
   // Wenn Kommentare vorhanden sind Flag 'hasComments' auf true setzen
   const hasComments = matchingComments.length > 0;
 
