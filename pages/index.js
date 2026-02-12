@@ -10,20 +10,16 @@ export default function HomePage({
   artPiecesInfo,
   onToggleFavorite,
 }) {
+  const spotlightPiece = useMemo(() => {
+    if (!artPieces || artPieces.length === 0) return null;
+    return getRandomElement(artPieces);
+  }, [artPieces]);
+
   if (artPiecesError) return <p>Error loading artworks</p>;
   if (artPiecesLoading || !artPieces || artPieces.length === 0)
     return <p>Loading...</p>;
 
-  const spotlightPiece = useMemo(
-    () => getRandomElement(artPieces),
-    [artPieces]
-  );
-
   if (!spotlightPiece) return <p>Loading Spotlight... Please Wait...</p>;
-
-  /* Bildgröße festlegen      */
-  const imageWidth = 150;
-  const imageHeight = 200;
 
   const info = artPiecesInfo.find((i) => i.slug === spotlightPiece.slug);
   const isFavorite = info ? info.isFavorite : false;
@@ -38,8 +34,8 @@ export default function HomePage({
         <h1>Spotlight</h1>
         <ArtPieceCard
           artPiece={spotlightPiece}
-          imageWidth={imageWidth}
-          imageHeight={imageHeight}
+          imageWidth={300}
+          imageHeight={400}
           href={`/gallery/${spotlightPiece.slug}`}
           showDetails={false}
           slug={spotlightPiece.slug}

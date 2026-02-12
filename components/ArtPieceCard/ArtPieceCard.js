@@ -103,7 +103,6 @@ export default function ArtPieceCard({
         alt={`${artPiece.name} by ${artPiece.artist}`}
         fill
         sizes="(max-width: 600px) 100vw, 600px"
-        loading="lazy"
       />
 
       <FavoriteBadge>
