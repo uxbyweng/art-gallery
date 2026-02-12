@@ -46,7 +46,7 @@ export default function ArtPieceCard({
   isFavorite,
   onToggleFavorite,
 }) {
-  const image = (
+  /* const image = (
     <StyledImage
       className="card__image"
       src={artPiece.imageSource}
@@ -55,7 +55,7 @@ export default function ArtPieceCard({
       alt={`${artPiece.name} by ${artPiece.artist}`}
       loading="lazy"
     />
-  );
+  ); */
   return (
     <Card>
       <Title>
@@ -64,7 +64,27 @@ export default function ArtPieceCard({
       </Title>
 
       {/* Zeige href-Link nur wenn 'href' vohanden/übergeben worden ist */}
-      {href ? <Link href={href}>{image}</Link> : image}
+      {href ? (
+        <Link href={href}>
+          <StyledImage
+            className="card__image"
+            src={artPiece.imageSource}
+            width={imageWidth}
+            height={imageHeight}
+            alt={`${artPiece.name} by ${artPiece.artist}`}
+            loading="lazy"
+          />
+        </Link>
+      ) : (
+        <StyledImage
+          className="card__image"
+          src={artPiece.imageSource}
+          width={imageWidth}
+          height={imageHeight}
+          alt={`${artPiece.name} by ${artPiece.artist}`}
+          loading="lazy"
+        />
+      )}
       <FavoriteButton
         slug={slug}
         isFavorite={isFavorite}
