@@ -3,9 +3,9 @@
 import useSWR from "swr";
 import useLocalStorageState from "use-local-storage-state";
 import MetaHead from "@/components/MetaHead/MetaHead";
-import Header from "../components/Header/Header";
-import GlobalStyle from "../styles";
-import Navigation from "../components/navigation";
+import Header from "@/components/Header/Header";
+import GlobalStyle from "@/styles";
+import Navigation from "@/components/Navigation/Navigation";
 
 /* API Fetch Funktion */
 async function fetcher(url) {

@@ -50,9 +50,10 @@ select {
 }
 
 main {
-    flex: 1;
-    max-width: 1100px;
-    margin: 0 30px;
+  flex: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 30px;
 }
 
 h1, h2 {
@@ -66,6 +67,7 @@ h1 {
     font-family: Lucida, sans-serif;
     font-weight: 300;
     color: var(--accent-color);
+    text-align:center;
 }
 
 `;

@@ -1,5 +1,8 @@
+// components/Navigation/Navigation.js
+
 import Link from "next/link";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBolt, faImages, faHeart } from "@fortawesome/free-solid-svg-icons";
 
@@ -10,16 +13,19 @@ const Nav = styled.nav`
   bottom: 0px;
   z-index: 3;
 `;
+
 const List = styled.ul`
   display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
 `;
+
 const ListItem = styled.li`
   flex: 0 0 33%;
   background-color: var(--bg-color);
 `;
+
 const StyledLink = styled(Link)`
   display: flex;
   flex-direction: column;
@@ -36,35 +42,66 @@ const StyledLink = styled(Link)`
   &:hover {
     color: #ff0000;
   }
+
+  ${(props) =>
+    props.$isActive &&
+    css`
+      color: #ff0000;
+    `}
 `;
+
 const Icon = styled(FontAwesomeIcon)`
   width: 20px;
   height: 20px;
   max-width: none;
   flex: 0 0 auto;
 `;
+
 const LinkText = styled.span`
   font-size: 12px;
 `;
 
 export default function Navigation() {
+  const router = useRouter();
+  const pathname = router.pathname;
+
+  const isActive = (href) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+
   return (
     <Nav aria-label="Main navigation">
       <List>
         <ListItem>
-          <StyledLink href="/" aria-label="Go to Spotlight page">
+          <StyledLink
+            href="/"
+            aria-current={isActive("/") ? "page" : undefined}
+            $isActive={isActive("/")}
+            aria-label="Go to Spotlight page"
+          >
             <Icon icon={faBolt} aria-hidden="true" />
             <LinkText>Spotlight</LinkText>
           </StyledLink>
         </ListItem>
+
         <ListItem>
-          <StyledLink href="/gallery/" aria-label="Go to Art Pieces gallery">
+          <StyledLink
+            href="/gallery/"
+            aria-current={isActive("/gallery/") ? "page" : undefined}
+            $isActive={isActive("/gallery/")}
+            aria-label="Go to Art Pieces gallery"
+          >
             <Icon icon={faImages} aria-hidden="true" />
             <LinkText>Art Pieces</LinkText>
           </StyledLink>
         </ListItem>
+
         <ListItem>
-          <StyledLink href="/favorites/" aria-label="Go to Favorites page">
+          <StyledLink
+            href="/favorites/"
+            aria-current={isActive("/favorites/") ? "page" : undefined}
+            $isActive={isActive("/favorites/")}
+            aria-label="Go to Favorites page"
+          >
             <Icon icon={faHeart} aria-hidden="true" />
             <LinkText>Favorites</LinkText>
           </StyledLink>

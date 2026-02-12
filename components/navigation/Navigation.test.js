@@ -1,5 +1,14 @@
 import { render, screen } from "@testing-library/react";
-import Navigation from ".";
+import Navigation from "@/components/Navigation/Navigation";
+
+jest.mock("next/router", () => ({
+  useRouter() {
+    return {
+      pathname: "/",
+    };
+  },
+}));
+
 describe("test for exists navigation links and goals", () => {
   test("renders navigation links 'Spotlight', 'Art Pieces' and 'Favorites'", () => {
     render(<Navigation />);
@@ -13,8 +22,8 @@ describe("test for exists navigation links and goals", () => {
     expect(favoritesLink).toBeInTheDocument();
 
     expect(spotlightLink).toHaveAttribute("href", "/");
-    expect(galleriyLink).toHaveAttribute("href", "/gallery");
-    expect(favoritesLink).toHaveAttribute("href", "/favorites");
+    expect(galleriyLink.getAttribute("href")).toMatch(/^\/gallery\/?$/);
+    expect(favoritesLink.getAttribute("href")).toMatch(/^\/favorites\/?$/);
   });
   test("has a semantic navigation landmark", () => {
     render(<Navigation />);

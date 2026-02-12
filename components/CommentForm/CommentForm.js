@@ -51,20 +51,15 @@ export default function CommentForm({ onAddComment, slug }) {
     const data = Object.fromEntries(formData);
 
     // Zeitstempel erzeugen
-    const dateTime = new Date();
-    let day = dateTime.getDate();
-    day = day.toString().padStart(2, "0");
-    let month = dateTime.getMonth() + 1;
-    month = month.toString().padStart(2, "0");
-    const year = dateTime.getFullYear();
-    let hours = dateTime.getHours();
-    hours = hours.toString().padStart(2, "0");
-    let minutes = dateTime.getMinutes();
-    minutes = minutes.toString().padStart(2, "0");
-    let seconds = dateTime.getSeconds();
-    seconds = seconds.toString().padStart(2, "0");
-    const timeStamp = `${day}.${month}.${year} ${hours}:${minutes}:${seconds}`;
-    console.log("dateTime: ", dateTime);
+    const timeStamp = new Intl.DateTimeFormat("de-DE", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hourCycle: "h23",
+    }).format(new Date());
 
     // Neuen Kommentar als object mit id, slug, comment und timestamp speichern
     const newCommentObject = {
