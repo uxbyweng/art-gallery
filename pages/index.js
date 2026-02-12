@@ -1,23 +1,7 @@
 import MetaHead from "@/components/MetaHead/MetaHead";
 import ArtPieceCard from "@/components/ArtPieceCard/ArtPieceCard";
 import getRandomElement from "@/utils/getRandomElement";
-import styled from "styled-components";
 import { useMemo } from "react";
-
-/* Styling */
-const Card = styled.article`
-  border: 1px solid #e5e5e5;
-  border-radius: 12px;
-  overflow: hidden;
-  background: white;
-  margin-top: 10px;
-  padding: 24px;
-`;
-const Title = styled.h2`
-  color: #333;
-  font-size: 1rem;
-  line-height: 1.2;
-`;
 
 export default function HomePage({
   artPieces,
