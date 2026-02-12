@@ -25,11 +25,3 @@ https://example-apis.vercel.app/api/art
 This repository is a fork/continuation of a group project. I use it to document my contribution, learnings, and potential improvements.
 
 ![wireframes](./docs/wireframes.excalidraw.png)
-
-## API
-
-We will fetch all necessary information about the art pieces from an API specifically designed for this course. [Check out the API](https://example-apis.vercel.app/api/art).
-
-```bash
-https://example-apis.vercel.app/api/art
-```
