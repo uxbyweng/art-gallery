@@ -1,4 +1,4 @@
-// components/navigation/index.js
+// components/Navigation/Navigation.js
 
 import Link from "next/link";
 import styled, { css } from "styled-components";
